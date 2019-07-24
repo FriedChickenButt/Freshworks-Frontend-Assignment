@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+*, *:before, *:after {
+-webkit-box-sizing: inherit;
+-moz-box-sizing: inherit;
+box-sizing: inherit;
+}
+
+::-webkit-input-placeholder {
+color: #56585b;
+}
+
+::-moz-placeholder {
+color: #56585b;
+}
+
+:-moz-placeholder {
+color: #56585b;
+}
+
+html {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Lato', sans-serif;
+margin: 0;
+background: url('bg.jpeg') no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;  
+/* -webkit-filter: blur(2px);*/
+background-size: cover;
+color: #0a0a0b;
+overflow: hidden;
+
+opacity: 0;
+-webkit-transition: opacity 1s ease-in;
+-moz-transition: opacity 1s ease-in;
+-ms-transition: opacity 1s ease-in;
+-o-transition: opacity 1s ease-in;
+transition: opacity 1s ease-in;
+}
+
+ul, nav{
+list-style: none;
+padding: 0;
+}
+
+a {
+color: #fff;
+text-decoration: none;
+cursor: pointer;
+opacity: 0.9;
+}
+
+a:hover {
+opacity: 1;
+}
+
+h1 {
+font-size: 3rem;
+font-weight: 700;
+color: #fff;
+margin: 0 0 1.5rem;
+}
+
+i {
+font-size: 1.3rem;
+}
+
+header {
+position: absolute;
+top: 0;
+left: 0;
+z-index: 10;
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+color: #fff;
+padding: 10px 100px 0;
+}
+
+header nav ul {
+display: flex;
+}
+
+header nav li{
+margin: 0 15px;
+}
+
+header nav li:first-child{
+margin-left: 0; 
+}
+
+header nav li:last-child{
+margin-right: 0;  
+}
+
+a.btn {
+color: #fff;
+padding: 10px;
+border: 1px solid rgba(255,255,255,0.5);
+-webkit-transition: all 0.2s;
+-moz-transition: all 0.2s;
+transition: all 0.2s;
+}
+
+a.btn:hover {
+background: #d73851;
+border: 1px solid #d73851;
+color: #fff;
+}
+
+.cover  {
+height: 100vh;
+width: 100%;
+background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.05)), to(rgba(0,0,0,0)));
+background: -webkit-linear-gradient(top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
+background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
+padding: 20px 50px;
+display: -webkit-box;
+display: flex;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+flex-direction: column;
+-webkit-box-pack: center;
+justify-content: center;
+-webkit-box-align: center;
+align-items: center;
+/* overflow-x: hidden; */
+}
+
+.search-form {
+    padding: 20px 50px;
+display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.flex-form input[type="button"] {
+background: #ef3f5a;
+border: 1px solid #ef3f5a;
+color: #fff;
+padding: 0 30px;
+cursor: pointer;
+-webkit-transition: all 0.2s;
+-moz-transition: all 0.2s;
+transition: all 0.2s;
+}
+
+.flex-form input[type="button"]:hover {
+background: #d73851;
+border: 1px solid #d73851;
+}
+
+.flex-form {
+display: -webkit-box;
+display: flex;
+z-index: 1000;
+position: relative;
+width: 500px;
+box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+/* -webkit-transition: position 0.4s ease-in-out;
+transition: position 0.4s ease-in-out; */
+}
+
+.flex-form > * {
+border: 0;
+padding: 0 0 0 10px;
+background: #fff;
+line-height: 50px;
+font-size: 1rem;
+border-radius: 0;
+outline: 0;
+-webkit-appearance: none;
+}
+
+input[type="search"] {
+flex-basis: 500px;
+}
+
+#madeby {
+position: absolute;
+bottom: 0;
+right: 0;
+padding: 25px 100px;
+color: #fff;
+}
+
+@media all and (max-width:800px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    .flex-form {
+        width: 100%;
+    }
+
+    .flex-form > * {
+        font-size: 0.9rem;
+    }
+
+    header {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        padding: 10px !important;
+    }
+
+    header h2 {
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .cover {
+        padding: 20px;
+    }
+
+    #madeby {
+        padding: 30px 20px;
+    }
+
+    header nav li{
+        margin: 0 10px;
+    }
+
+    .flex-form {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+    }
+
+    input[type="search"] {
+        flex-basis: 0;
+    }
+
+    input[type="search"] {
+        flex-basis: 100%;
+    }
+
+    label {
+        display: none;
+    }
+    
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .search-results {
+        padding-top: 10;
+    }
+
+}
+
+.search-results {
+    position: relative; 
+    top: 100; 
+    left: 0; 
+    right: 30;
+    bottom: 100;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* padding: 0; */
+}
+
+.card {
+/* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 16px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.card-container {
+    padding: 2px 16px;
+}
+
+.column {
+    float: left;
+    /* width: 25%; */
+    /* padding: 0 10px; */
+    border: 5px solid transparent;
+    background: rgba(255,255,255,0.7);
+    background-clip: padding-box;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+    margin: 0 -5px;
+    /* opacity: 0; */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body.load_animation {
+    opacity: 1;
+}
+
+.country-window {
+    margin: auto;
+    width: 300;
+    height: 100%;
+    opacity: 1;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    opacity: 1;
+    background: rgba(255,255,255,0.75);
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    display: none;
+}
+
+#x {
+    position: absolute;
+    background: black;
+    color: white;
+    top: 10px;
+    right: 10px; 
+    border-radius: 50%;
+    font-size: 20px;
+}

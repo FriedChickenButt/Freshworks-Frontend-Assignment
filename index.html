@@ -1,0 +1,47 @@
+<!-- 
+    Author: Swapnil M Kumbhare
+    Registration no: 120003324
+    Background Photo credit: Ben Blennerhassett (https://unsplash.com/@benblenner)
+ -->
+<html>
+    <title>
+        Country Explorer
+    </title>
+    <head>
+        <link rel="stylesheet" href="stylesheet.css">
+        <script src="app.js"></script>
+    </head>
+    <body class="" id="body_id" onload="bodyOnload()">
+            <div class="container" id="container">
+                <div class="cover">
+                    <div style="position: fixed" class="search-form">
+                        <h1 id="searchTitle">Discover what's out there.</h1>
+                        <form  class="flex-form" id = "form1" onfocus="moveSearchTop()" onfocusout="moveSearchBack()" onsubmit="return submitForm()">
+                            <label for="from">
+                                <i class="ion-location"></i>
+                            </label>
+                            <input type="search" id = "searchBox" placeholder="Where do you want to go?" autocomplete="off" autofocus>
+                            <input type="button" value="Search" onclick="submitForm()">
+                        </form>
+                        
+                    </div>
+                    <div id="madeby">
+                        <span>
+                            Photo credit: <a href="https://unsplash.com/@benblenner" target="_blank">Ben Blennerhassett</a>
+                        </span>
+                    </div>
+                <div class="search-results">
+
+                </div>
+                <div class="overlay">
+                        <button id = "x" onclick="hideCountryWindow()">
+                                X
+                            </button>
+                    <div class="country-window" id="e.target.className">
+
+                    </div>
+                </div>
+                </div>
+            </div>
+    </body>
+</html>
