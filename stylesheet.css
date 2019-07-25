@@ -292,6 +292,12 @@ color: #fff;
 
 }
 
+/* @media all and (max-width:1100px) {
+    .flex-form {
+        margin-top: 100px; 
+    }
+} */
+
 .search-results {
     position: relative; 
     top: 100; 
@@ -376,4 +382,8 @@ body.load_animation {
     right: 10px; 
     border-radius: 50%;
     font-size: 20px;
+}
+
+.result-text {
+    color: white;
 }

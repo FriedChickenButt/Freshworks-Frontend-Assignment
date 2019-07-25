@@ -1,59 +1,66 @@
 <!-- 
     Author: Swapnil M Kumbhare
     Registration no: 120003324
+    Branch : Computer Scicence Engineering
     Background Photo credit: Ben Blennerhassett (https://unsplash.com/@benblenner)
  -->
 <html>
     <title>
-        Country Explorer
+            Country Explorer
     </title>
     <head>
         <link rel="stylesheet" href="stylesheet.css">
         <script src="app.js"></script>
     </head>
     <body class="" id="body_id" onload="bodyOnload()">
-            <div class="container" id="container">
-                <div class="cover">
-                    <div style="position: fixed" class="search-form">
-                        <h1 id="searchTitle">Discover what's out there.</h1>
-                        <form  class="flex-form" id = "form1" onfocus="moveSearchTop()" onfocusout="moveSearchBack()" onsubmit="return submitForm()">
-                            <label for="from">
-                                <i class="ion-location"></i>
-                            </label>
-                            <select name="search-options" class="dropdown" id="select">
-                            <option value="name">Name</option>
-                            <option value="fullname">Full Name</option>
-                            <option value="currency">Currency</option>
-                            <option value="lang">Language Code</option>
-                            <option value="capital">Capital</option>
-                            <option value="callingcode">Calling code</option>
-                            <option value="region">Region</option>
-                            <option value="regionalbloc">Regional Bloc</option>
-                            </select>
-                            
-                            <input type="search" id = "searchBox" placeholder="of the country you want to go?" autocomplete="off" autofocus>
-                            <input type="button" value="Search" onclick="submitForm()">
-
-                        </form>
+        <div class="container" id="container">
+            <header>
+                <h2>
+                    Country Explorer
+                </h2>
+            </header>
+            <div class="cover">
                         
-                    </div>
-                    <div id="madeby">
-                        <span>
-                            Photo credit: <a href="https://unsplash.com/@benblenner" target="_blank">Ben Blennerhassett</a>
-                        </span>
-                    </div>
-                <div class="search-results">
+                <div style="position: fixed" class="search-form">
+                    <h1 id="searchTitle">Discover what's out there.</h1>
+                    <form  class="flex-form" id = "form1" onfocus="moveSearchTop()" onfocusout="moveSearchBack()" onsubmit="return submitForm()">
+                        <label for="from">
+                            <i class="ion-location"></i>
+                        </label>
+                        <select name="search-options" class="dropdown" id="select">
+                        <option value="name">Name</option>
+                        <option value="fullname">Full Name</option>
+                        <option value="currency">Currency</option>
+                        <option value="lang">Language Code</option>
+                        <option value="capital">Capital</option>
+                        <option value="callingcode">Calling code</option>
+                        <option value="region">Region</option>
+                        <option value="regionalbloc">Regional Bloc</option>
+                        </select>
+                        
+                        <input type="search" id = "searchBox" placeholder="of the country you want to go?" autocomplete="off" autofocus>
+                        <input type="button" value="Search" onclick="submitForm()">
 
+                    </form>
+                    
                 </div>
-                <div class="overlay">
-                        <button id = "x" onclick="hideCountryWindow()">
-                                X
-                            </button>
-                    <div class="country-window" id="e.target.className">
+                <div id="madeby">
+                    <span>
+                        Photo credit: <a href="https://unsplash.com/@benblenner" target="_blank">Ben Blennerhassett</a>
+                    </span>
+                </div>
+            <div class="search-results">
 
-                    </div>
-                </div>
+            </div>
+            <div class="overlay">
+                <button id = "x" onclick="hideCountryWindow()">
+                        X
+                </button>
+                <div class="country-window" id="e.target.className">
+
                 </div>
             </div>
+            </div>
+        </div>
     </body>
 </html>

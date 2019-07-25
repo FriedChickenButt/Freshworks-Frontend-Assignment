@@ -3,21 +3,19 @@ function bodyOnload(){
     console.log(document.getElementById("body_id").className += " load_animation");
 }
 
-isSearchAttempted = 0;
+// Moves search bar to top
 function moveSearchTop() {
     form = document.getElementById("form1");
     form.style.position = "fixed";
     form.style.top = 20;
 }
 
-function moveSearchBack() {
-    if(isSearchAttempted == 0) {
-        form = document.getElementById("form1");
-        form.style.position = "relative";
-        form.style.top = 0;
-    }
-}
-
+// Creates a column of cards
+/* 
+    Params: 
+        data: json fetch data
+        coln_width: width of every card in column
+*/
 function createColumnCard(data, coln_width) {
     var colnDiv = document.createElement("div");
     var outerDiv = document.createElement("div");
@@ -55,6 +53,7 @@ function createColumnCard(data, coln_width) {
     return colnDiv;
 }
 
+// Call of onsubmit listener
 function submitForm() {
     searchBox = document.getElementById("searchBox");
     searchTitle = document.getElementById("searchTitle");
@@ -62,7 +61,9 @@ function submitForm() {
         return false;
     else {
         moveSearchTop();
-        isSearchAttempted = 1;
+        header = document.getElementsByTagName("header")[0];
+        // Eliminating header for cleaner look
+        header.style = "display: none;";
         searchTitle.style.display = "none";
         // console.log(searchBox.value);
         container = document.getElementsByClassName("search-results")[0];
@@ -75,6 +76,8 @@ function submitForm() {
         select = document.getElementById('select');
         var endpoint = "";
         var extraparam = "";
+
+        // Setting value from dropdown
         if(select.value == "fullname") {
             endpoint = "name";
             extraparam = "&fullText=true";
@@ -95,6 +98,9 @@ function submitForm() {
                         li1 = document.createElement("li");
                         li2 = document.createElement("li");
                         li3 = document.createElement("li");
+                        h2.setAttribute("class", "result-text");
+                        h3.setAttribute("class", "result-text");
+                        ul.setAttribute("class", "result-text");
                         h2.innerHTML = "Your search for \"" + searchBox.value + "\" did not match any Countries.";
                         h3.innerHTML = "You might need to:";
                         li1.innerHTML = "Make sure that the country is spelled correctly.";
@@ -113,6 +119,7 @@ function submitForm() {
 
                     // Examine the text in the response
                     response.json().then(function(data) {
+                        h2.setAttribute("class", "result-text");
                         h2.innerHTML = "Your search for \"" + searchBox.value + "\" matched " + data.length + " Countries.";
                         container.appendChild(h2);
                         n_coln = parseInt(screen.width/300);
@@ -144,6 +151,11 @@ function submitForm() {
     return false;
 }
 
+// Call of onclick listener of cards
+/*
+    Params: 
+        name: Full country name of the card clicked
+*/
 function cardClick(name) {
     countryWindow = document.getElementsByClassName("country-window")[0];
     overlay = document.getElementsByClassName("overlay")[0];
@@ -232,6 +244,8 @@ function cardClick(name) {
             }
         )
 }
+
+// Call of onclick of "x" button
 function hideCountryWindow() {
     country_win = document.getElementsByClassName("country-window")[0];
     while(country_win.firstChild) {
