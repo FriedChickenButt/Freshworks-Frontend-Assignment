@@ -20,8 +20,20 @@
                             <label for="from">
                                 <i class="ion-location"></i>
                             </label>
-                            <input type="search" id = "searchBox" placeholder="Where do you want to go?" autocomplete="off" autofocus>
+                            <select name="search-options" class="dropdown" id="select">
+                            <option value="name">Name</option>
+                            <option value="fullname">Full Name</option>
+                            <option value="currency">Currency</option>
+                            <option value="lang">Language Code</option>
+                            <option value="capital">Capital</option>
+                            <option value="callingcode">Calling code</option>
+                            <option value="region">Region</option>
+                            <option value="regionalbloc">Regional Bloc</option>
+                            </select>
+                            
+                            <input type="search" id = "searchBox" placeholder="of the country you want to go?" autocomplete="off" autofocus>
                             <input type="button" value="Search" onclick="submitForm()">
+
                         </form>
                         
                     </div>

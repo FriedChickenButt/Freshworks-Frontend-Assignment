@@ -72,8 +72,19 @@ function submitForm() {
             container.removeChild(container.firstChild);
         }                
         h2 = document.createElement("h2");
+        select = document.getElementById('select');
+        var endpoint = "";
+        var extraparam = "";
+        if(select.value == "fullname") {
+            endpoint = "name";
+            extraparam = "&fullText=true";
+        }
+        else {
+            endpoint = select.value;
+        }
+        
         // Fetch results
-        fetch('https://restcountries.eu/rest/v2/name/' + searchBox.value + "?fields=name;capital;currencies;flag;region")
+        fetch('https://restcountries.eu/rest/v2/'+ endpoint + '/' + searchBox.value + "?fields=name;capital;currencies;flag;region" + extraparam)
             .then(
                 function(response) {
                     // Error Handling
